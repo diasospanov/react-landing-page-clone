@@ -1,11 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@upleveled/eslint-config-upleveled/tsconfig.base.json",
- "compilerOptions": {
-   "jsxImportSource": "@emotion/react"
- }
-}
-  /* "include": [
+  "include": [
     "**/.eslintrc.cjs",
     "**/*.ts",
     "**/*.tsx",
@@ -16,4 +12,4 @@
     ".next/types/**/*.ts",
     "next-env.d.ts"
   ]
-} */
+}
