@@ -6,7 +6,7 @@ const headerStyles = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 25px;
+  padding: 0px 25px;
 `;
 
 const logoStyles = css`
@@ -21,12 +21,12 @@ const companyNameStyles = css`
 const navigationStyles = css`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
   list-style-type: none;
-  gap: 12px;
+  gap: 25px;
 `;
 
 const downloadLinkStyles = css`
@@ -36,7 +36,22 @@ const downloadLinkStyles = css`
   font-weight: 700;
 `;
 
+const sectionOneStyles = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > p {
+    font-weight: 300;
+    font-size: 18px;
+  }
+`;
+
 const manWithPlane = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 650px;
   margin: 0;
   margin-top: 0;
@@ -44,6 +59,96 @@ const manWithPlane = css`
 
 const h1Styles = css`
   font-family: 'PT Serif Caption', sans-serif;
+  font-size: 65px;
+  font-weight: 400;
+  margin: 0;
+  padding: 10px;
+  border: 0;
+`;
+
+const macAndVideoStyles = css`
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+`;
+
+const macStyles = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 19px;
+  font-weight: 700;
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 35px;
+  vertical-align: baseline;
+  gap: 15px;
+`;
+
+const underMacParagraph = css`
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 200;
+  font-size: 14px;
+  vertical-align: baseline;
+`;
+
+const videoStyles = css`
+  display: flex;
+  align-self: auto;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  text-decoration: none;
+  vertical-align: baseline;
+  gap: 15px;
+  margin-bottom: 35px;
+`;
+
+const pBeforeSectionTwoStyles = css`
+  font-weight: 300;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const sectionTwoStyles = css`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  > img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+  }
+`;
+
+const subSectionTwoStyles = css`
+  > h2 {
+    display: block;
+    /* align-items: center;
+    justify-content: center; */
+    font-family: 'PT Serif Caption', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  > p {
+    display: block;
+    font-weight: 300;
+    font-size: 18px;
+  }
 `;
 
 function App() {
@@ -72,7 +177,7 @@ function App() {
           </li>
         </ul>
       </header>
-      <section>
+      <section css={sectionOneStyles}>
         <a href="/#">
           <img
             src="https://wunderbucket.io/img/hero@2x.png?version=6eb84737808a603b9b4fc9faaba3f87d
@@ -81,9 +186,65 @@ function App() {
             css={manWithPlane}
           />
         </a>
-        <h1 css={h1Styles}>Turn local folders into websites</h1>
+        <h1 css={h1Styles}>
+          Turn local folders
+          <br />
+          into websites
+        </h1>
+        <p>
+          For designers & developers who want fast, secure websites without
+          <br />
+          command lines, or configs. It’s like if Dropbox had a cute little
+          static
+          <br />
+          hosting service baby.
+        </p>
       </section>
-      <div></div>
+      <div css={macAndVideoStyles}>
+        <div>
+          <a href="/#" css={macStyles}>
+            <img
+              src="https://wunderbucket.io/img/apple-logo.svg?version=c00abf15cc86c91ecc3bc722fc4a2b94"
+              alt="Download for Mac link"
+            />
+            Download for Mac
+          </a>
+          <p css={underMacParagraph}>Available on Setapp & the App Store</p>
+        </div>
+        <div>
+          <a href="/#" css={videoStyles}>
+            <img
+              src="https://wunderbucket.io/img/play.svg?version=4fd9564999a4c8a470b4f2f2bc4f2cc4"
+              alt="See how it works link"
+            />
+            See how it works
+          </a>
+          <p css={underMacParagraph} />
+        </div>
+      </div>
+      <div css={pBeforeSectionTwoStyles}>
+        <p>
+          Here's some of the highlights of the features you get when you build
+          sites
+          <br />
+          with Wunderbucket.
+        </p>
+      </div>
+      <div css={sectionTwoStyles}>
+        <img
+          src="https://wunderbucket.io/img/cloud-hosted.png?version=cae378b9f7e1cceb9d18c8649f0e9eae"
+          alt="A man with a baloon"
+        />
+      </div>
+      <div css={subSectionTwoStyles}>
+        <h2>Cloud Hosted</h2>
+        <p>
+          All your content is hosted on Amazon's Cloud. This is the
+          <br />
+          infrastructure that powers the world's biggest websites, not a<br />
+          server running out of a garage. You're in good hands.
+        </p>
+      </div>
     </>
   );
 }
