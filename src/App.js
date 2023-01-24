@@ -118,9 +118,27 @@ const pBeforeSectionTwoStyles = css`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 26px 0;
+  /* ::before {
+    display: block;
+    background-image: url('https://wunderbucket.io/img/pattern.png?version=c5a55f285d805811dbd500e645586c37');
+    width: 800px;
+    background-position: bottom;
+    top: 18;
+    height: 3px;
+    position: absolute;
+    content: '';
+    transform: rotate(-1deg);
+  } */
 `;
 
 const sectionTwoStyles = css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const sectionTwoImageStyles = css`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -151,6 +169,39 @@ const subSectionTwoStyles = css`
   }
 `;
 
+const footerStyles = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+`;
+
+const webDesignerStyles = css`
+  display: block;
+  /* align-items: center;
+  justify-content: space-between; */
+  text-decoration: none;
+  font-family: inherit;
+  color: inherit;
+
+  > a {
+    text-decoration: none;
+    font-family: inherit;
+    color: inherit;
+  }
+`;
+
+const footerNavigationStyles = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  list-style-type: none;
+  gap: 50px;
+`;
+
 function App() {
   return (
     <>
@@ -161,8 +212,7 @@ function App() {
             alt="Company Logo"
             css={logoStyles}
           />
-          {/* </a>
-        <a href="/#"> */}
+
           <img
             src="https://wunderbucket.io/img/wunderbucket-type.svg?version=ebc27272259d6f56c03da7bf2cef1e12"
             alt="Company Name"
@@ -230,21 +280,45 @@ function App() {
           with Wunderbucket.
         </p>
       </div>
-      <div css={sectionTwoStyles}>
-        <img
-          src="https://wunderbucket.io/img/cloud-hosted.png?version=cae378b9f7e1cceb9d18c8649f0e9eae"
-          alt="A man with a baloon"
-        />
-      </div>
-      <div css={subSectionTwoStyles}>
-        <h2>Cloud Hosted</h2>
-        <p>
-          All your content is hosted on Amazon's Cloud. This is the
+      <section css={sectionTwoStyles}>
+        <div css={sectionTwoImageStyles}>
+          <img
+            src="https://wunderbucket.io/img/cloud-hosted.png?version=cae378b9f7e1cceb9d18c8649f0e9eae"
+            alt="A man with a baloon"
+          />
+        </div>
+        <div css={subSectionTwoStyles}>
+          <h2>Cloud Hosted</h2>
+          <p>
+            All your content is hosted on Amazon's Cloud. This is the
+            <br />
+            infrastructure that powers the world's biggest websites, not a<br />
+            server running out of a garage. You're in good hands.
+          </p>
+        </div>
+      </section>
+      <footer css={footerStyles}>
+        <p css={webDesignerStyles}>
+          © 2022
+          <a href="https://smmall.site/">
+            <b> Smmall Inc.</b>
+          </a>
           <br />
-          infrastructure that powers the world's biggest websites, not a<br />
-          server running out of a garage. You're in good hands.
+          Illustrations by
+          <a href="https://humanities.studio/">
+            <b> Humanities</b>
+          </a>
         </p>
-      </div>
+        <ul css={footerNavigationStyles}>
+          <li>About</li>
+          <li>Blog</li>
+          <li>Docs</li>
+          <li>System Status</li>
+          <li>Privacy</li>
+          <li>Terms</li>
+          <li>Contact</li>
+        </ul>
+      </footer>
     </>
   );
 }
